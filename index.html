@@ -391,14 +391,15 @@ footer{padding-block:36px 150px;color:var(--muted);font-size:.85rem;display:flex
 
   <section id="contact">
     <div class="contact reveal">
-      <h2>Let's build something.</h2>
-      <p style="margin:0;color:var(--muted)">I'm looking for full-time roles in AI engineering, software engineering, cloud and data. The fastest way to reach me is email.</p>
+      <h2>Hiring, or have a project in mind?</h2>
+      <p style="margin:0;color:var(--muted)">I'm looking for full-time roles in AI engineering, software engineering, cloud and data. I also take on freelance work: cloud hosting and migrations, AI automations (Gemini, WhatsApp bots) and Next.js websites.</p>
       <div class="btns">
-        <button class="btn primary" data-copy="piyushkumar5435@gmail.com">Copy email</button>
+        <a class="btn primary" href="mailto:piyushkumar5435@gmail.com?subject=Job%20opportunity%20for%20Piyush">Hiring for a role</a>
+        <a class="btn" href="mailto:piyushkumar5435@gmail.com?subject=Freelance%20project%20inquiry">Freelance project</a>
         <a class="btn" href="resume/Piyush_Kumar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
         <a class="btn" href="https://www.linkedin.com/in/impiyushkumar0/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <p class="mono" style="margin:0;color:var(--muted)">piyushkumar5435@gmail.com · +91 78589 68169 · <a href="resume/Piyush_Kumar_Resume_Data.pdf" target="_blank" rel="noopener">data-roles resume</a></p>
+      <p class="mono" style="margin:0;color:var(--muted)">piyushkumar5435@gmail.com <button class="copy" data-copy="piyushkumar5435@gmail.com" aria-label="Copy email" style="font-family:inherit;font-size:inherit">(copy)</button> · +91 78589 68169 · <a href="resume/Piyush_Kumar_Resume_Data.pdf" target="_blank" rel="noopener">data-roles resume</a></p>
     </div>
   </section>
 
@@ -515,7 +516,7 @@ const K=$('#cmdk'),KQ=$('#kq'),KL=$('#kl');
 const go=id=>()=>document.getElementById(id).scrollIntoView({behavior:RM?'auto':'smooth'});
 const open=u=>()=>{const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';a.click()};
 const CMDS=[['Experience','section',go('work')],['Projects','section',go('projects')],['Stack','section',go('skills')],['Contact','section',go('contact')],
- ['Copy email','action',()=>{navigator.clipboard?.writeText('piyushkumar5435@gmail.com').then(()=>toast('Email copied'),()=>toast('piyushkumar5435@gmail.com'))}],
+ ['Email me','link',()=>{location.href='mailto:piyushkumar5435@gmail.com?subject=Hi%20Piyush'}],['Copy email','action',()=>{navigator.clipboard?.writeText('piyushkumar5435@gmail.com').then(()=>toast('Email copied'),()=>toast('piyushkumar5435@gmail.com'))}],
  ['Toggle theme','action',()=>$('#theme').click()],['Make him jump','action',jump],
  ['Open JobMesh','link',open('https://jobmesh.in/')],['Open PronounceAI','link',open('https://pronounceai-app.vercel.app/')],['Open VedaAI','link',open('https://vedaai-tool.vercel.app/')],
  ['GitHub','link',open('https://github.com/impiyushkumar')],['LinkedIn','link',open('https://www.linkedin.com/in/impiyushkumar0/')],['Resume','link',open('resume/Piyush_Kumar_Resume.pdf')],['Open EnglishJobsGermany','link',open('https://englishjobsgermany.com/')],['X (Twitter)','link',open('https://x.com/pydatawiz')]];
