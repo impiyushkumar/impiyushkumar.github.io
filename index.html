@@ -1,580 +1,579 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <title>Piyush Kumar Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-
-
-
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Piyush Kumar">
+<meta property="og:description" content="Software Engineer working across cloud, AI and data.">
+<title>Piyush Kumar</title>
+<meta name="description" content="Piyush Kumar — Software Engineer working across cloud, AI and data. Builder of jobmesh.in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
 <style>
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-::-webkit-scrollbar{
-	display: none;
+/* Layout: one calm 720px reading column; the only loud things are the particle field in the hero and the walking figure. */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --fg:#111318; --muted:#636a78; --line:#e3e6ec;
+  --accent:#2f5bff; --accent-soft:#e6ecff; --good:#16a34a; --good-soft:#dcfce7;
+  --display:"Hanken Grotesk",ui-sans-serif,system-ui,sans-serif;
+  --body:"Hanken Grotesk",ui-sans-serif,system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --radius:14px;
 }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0b0c0f; --surface:#14161b; --fg:#eceef3; --muted:#9097a6; --line:#23262e;
+  --accent:#7d9bff; --accent-soft:#1a2240; --good:#4ade80; --good-soft:#12301f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b0c0f; --surface:#14161b; --fg:#eceef3; --muted:#9097a6; --line:#23262e;
+  --accent:#7d9bff; --accent-soft:#1a2240; --good:#4ade80; --good-soft:#12301f; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+::selection{background:var(--accent);color:#fff}
+.wrap{max-width:720px;margin:0 auto}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  background:color-mix(in srgb,var(--bg) 78%,transparent);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px))}
+nav.top .wrap{display:flex;align-items:center;gap:20px;height:60px}
+nav.top .logo{font-family:var(--mono);font-weight:500;text-decoration:none;font-size:.9rem}
+nav.top .links{display:flex;gap:18px;margin-right:auto}
+nav.top .links a{text-decoration:none;color:var(--muted);font-size:.92rem;transition:color .2s}
+nav.top .links a:hover{color:var(--fg)}
+.kbd{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  border-radius:999px;padding:5px 10px;cursor:pointer;font:inherit;font-size:.82rem}
+.kbd kbd{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.iconbtn{width:34px;height:34px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.iconbtn svg{width:16px;height:16px}
 
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+/* hero */
+.hero{position:relative;padding-block:28px 8px}
+#field{position:relative;height:260px;border-radius:var(--radius);border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 70% 40%,var(--accent-soft),transparent 60%),var(--surface);overflow:hidden}
+#field canvas{display:block;width:100%;height:100%}
+.field-hud{position:absolute;left:16px;bottom:14px;right:16px;display:flex;justify-content:space-between;align-items:flex-end;pointer-events:none;gap:12px}
+.field-hud .now{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.field-hud .now b{color:var(--accent);font-weight:500}
+.field-hud .dots{display:flex;gap:6px;pointer-events:auto}
+.field-hud .dots button{width:22px;height:4px;border-radius:4px;border:0;background:var(--line);cursor:pointer;padding:0}
+.field-hud .dots button.on{background:var(--accent)}
+.field-tag{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:.72rem;color:var(--muted);pointer-events:none}
+
+.id{display:flex;gap:18px;align-items:center;margin-top:28px}
+.avatar{width:84px;height:84px;flex:none;image-rendering:pixelated;border-radius:16px;background:#eef1f6;border:1px solid var(--line)}
+.id h1{font-family:var(--display);font-size:clamp(1.7rem,4vw,2.1rem);line-height:1.15;margin:0;letter-spacing:-.02em;font-weight:700}
+.id .role{color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-top:4px}
+.copy{border:0;background:none;color:var(--muted);cursor:pointer;font:inherit;padding:0;display:inline-flex;gap:4px;align-items:center}
+.copy:hover{color:var(--fg)}
+.lede{font-size:1.12rem;margin:22px 0 0;max-width:62ch;text-wrap:pretty}
+.lede em{font-style:normal;color:var(--accent)}
+.status{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.pill.live{background:var(--good-soft);border-color:transparent;color:var(--good)}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.socials{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}
+.socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;color:var(--muted);border:1px solid transparent;transition:.2s}
+.socials a:hover{color:var(--fg);border-color:var(--line);background:var(--surface);transform:translateY(-2px)}
+.socials svg{width:18px;height:18px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:28px}
+.stats div{background:var(--surface);padding:14px 16px}
+.stats b{display:block;font-size:1.5rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stats span{color:var(--muted);font-size:.8rem}
+
+/* sections */
+section{padding-block:44px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
+h2{font-family:var(--display);font-size:1.45rem;margin:0;letter-spacing:-.015em;font-weight:700}
+.sec-head .mono{color:var(--muted)}
+
+/* experience */
+.job{border-top:1px solid var(--line);padding:16px 0}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:start}
+.job summary::-webkit-details-marker{display:none}
+.job .co{font-weight:700;font-size:1.08rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.job .title{color:var(--muted);font-size:.95rem}
+.job .when{text-align:right;color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums}
+.job .chev{display:inline-block;transition:transform .25s;color:var(--muted);font-size:.8rem}
+.job[open] .chev{transform:rotate(90deg)}
+.job ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+.job li{margin:6px 0}
+.job li b{color:var(--fg);font-weight:600}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:0 12px 30px -18px color-mix(in srgb,var(--accent) 60%,transparent)}
+.card .stage{height:150px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:
+  linear-gradient(var(--bg),var(--bg)) padding-box}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{margin:0;font-size:1.05rem;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.card h3 a{font-size:.78rem;font-family:var(--mono);color:var(--accent);text-decoration:none;font-weight:500;white-space:nowrap}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:4px}
+.tags span{font-family:var(--mono);font-size:.68rem;padding:2px 7px;border-radius:6px;background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.metric{font-family:var(--mono);font-size:.74rem;color:var(--fg)}
+.metric i{font-style:normal;color:var(--accent)}
+
+/* project stage animations */
+.feed{position:absolute;inset:12px 14px;display:flex;flex-direction:column;gap:7px;animation:feed 9s linear infinite}
+.feed div{height:28px;border-radius:8px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 8px;font-family:var(--mono);font-size:.62rem;color:var(--muted);flex:none}
+.feed div::before{content:"";width:12px;height:12px;border-radius:4px;background:var(--accent-soft);border:1px solid var(--accent)}
+.feed div u{text-decoration:none;margin-left:auto;color:var(--accent)}
+@keyframes feed{to{transform:translateY(-50%)}}
+.wave{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:3px;padding:0 18px}
+.wave i{width:4px;border-radius:3px;background:var(--accent);opacity:.85;animation:bar 1.2s ease-in-out infinite}
+@keyframes bar{0%,100%{height:10%}50%{height:var(--h)}}
+.wave-words{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.wave-words b{color:#e5484d;font-weight:500;text-decoration:underline wavy}
+.doc{position:absolute;left:50%;top:14px;width:62%;transform:translateX(-50%);height:150px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px}
+.doc span{display:block;height:6px;border-radius:3px;background:var(--line);margin:7px 0}
+.doc .box{position:absolute;border:1.5px solid var(--accent);border-radius:4px;background:color-mix(in srgb,var(--accent) 10%,transparent);animation:boxin 4s infinite}
+.doc .scan{position:absolute;left:0;right:0;height:2px;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:scan 4s linear infinite}
+@keyframes scan{0%{top:0}100%{top:100%}}
+@keyframes boxin{0%,30%{opacity:0;transform:scale(.9)}40%,90%{opacity:1;transform:none}100%{opacity:0}}
+.langs{position:absolute;inset:16px;display:grid;grid-template-rows:repeat(3,1fr);gap:8px}
+.langs div{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+.langs div em{font-style:normal;width:22px}
+.langs .spec{flex:1;height:100%;display:flex;align-items:center;gap:2px}
+.langs .spec i{flex:1;background:var(--accent);border-radius:2px;opacity:.75;animation:bar 1.6s ease-in-out infinite}
+.term{position:absolute;inset:14px;font-family:var(--mono);font-size:.66rem;color:var(--muted);line-height:1.7}
+.term .ok{color:var(--good)}
+.term .ln{opacity:0;animation:type 6s infinite}
+@keyframes type{0%{opacity:0}8%,90%{opacity:1}100%{opacity:0}}
+.split{position:absolute;inset:0;display:grid;place-items:center}
+.split .bill{font-family:var(--mono);font-size:.8rem;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);z-index:2}
+.split .u{position:absolute;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent);display:grid;place-items:center;font-size:.6rem;font-family:var(--mono);color:var(--accent);animation:orbit 8s linear infinite}
+@keyframes orbit{from{transform:rotate(var(--a)) translateX(58px) rotate(calc(-1*var(--a)))}to{transform:rotate(calc(var(--a) + 360deg)) translateX(58px) rotate(calc(-1*var(--a) - 360deg))}}
+
+/* skills marquee */
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);display:flex;flex-direction:column;gap:10px}
+.track{display:flex;gap:8px;width:max-content;animation:slide 40s linear infinite}
+.track.rev{animation-direction:reverse}
+.marquee:hover .track{animation-play-state:paused}
+.chip{font-size:.86rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);white-space:nowrap;transition:.2s}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip small{font-family:var(--mono);color:var(--muted);margin-right:6px;font-size:.66rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+.groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.group{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--surface)}
+.group h4{margin:0 0 4px;font-size:.78rem;font-family:var(--mono);color:var(--accent);font-weight:500}
+.group p{margin:0;color:var(--muted);font-size:.9rem}
+
+/* contact */
+.contact{border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:24px;display:grid;gap:14px}
+.contact h2{font-size:1.6rem}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;border:1px solid var(--line);background:var(--bg);text-decoration:none;font-weight:600;font-size:.92rem;cursor:pointer;font-family:inherit;color:var(--fg);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+footer{padding-block:36px 150px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* walking figure */
+#walker{position:fixed;left:0;bottom:calc(10px + env(safe-area-inset-bottom,0px));width:48px;height:64px;z-index:40;cursor:pointer;image-rendering:pixelated;transition:filter .2s}
+#walker canvas{width:48px;height:64px;image-rendering:pixelated}
+#bubble{position:fixed;z-index:41;bottom:calc(84px + env(safe-area-inset-bottom,0px));left:0;max-width:220px;font-size:.8rem;background:var(--fg);color:var(--bg);padding:6px 10px;border-radius:10px;pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s;white-space:nowrap}
+#bubble.show{opacity:1;transform:none}
+#bubble::after{content:"";position:absolute;bottom:-5px;left:16px;border:5px solid transparent;border-top-color:var(--fg);border-bottom:0}
+.ground{position:fixed;left:0;right:0;bottom:env(safe-area-inset-bottom,0px);height:10px;z-index:39;pointer-events:none;
+  background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 12px) top/100% 1px no-repeat}
+
+/* command palette */
+#cmdk{position:fixed;inset:0;z-index:80;background:color-mix(in srgb,var(--fg) 25%,transparent);display:grid;place-items:start center;padding:14vh 16px 0}
+#cmdk .panel{width:min(560px,100%);background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.4)}
+#cmdk input{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:16px 18px;font:inherit;font-size:1rem;color:var(--fg);outline:none}
+#cmdk ul{list-style:none;margin:0;padding:6px;max-height:320px;overflow:auto}
+#cmdk li{padding:10px 12px;border-radius:10px;cursor:pointer;display:flex;justify-content:space-between;gap:12px;font-size:.94rem}
+#cmdk li span{color:var(--muted);font-family:var(--mono);font-size:.72rem}
+#cmdk li.on{background:var(--accent-soft);color:var(--accent)}
+.toast{position:fixed;left:50%;top:calc(76px + env(safe-area-inset-top,0px));transform:translateX(-50%) translateY(-10px);background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:10px;font-size:.85rem;opacity:0;transition:.25s;z-index:90;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+.reveal{transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.reveal.pre{transform:translateY(14px);opacity:.001}
+
+@media (max-width:640px){
+  nav.top .links{display:none}
+  nav.top .wrap{justify-content:space-between}
+  .grid,.groups{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .job summary{grid-template-columns:1fr}
+  .job .when{text-align:left}
+  #field{height:220px}
+  .kbd .label{display:none}
+  .id{align-items:flex-start}
+  .role .copy{flex-basis:100%;font-size:.88rem}
 }
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal.pre{transform:none;opacity:1}
 }
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
-
-
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
-
-
-/* project image zoom effect */
-
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
-
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-
-
 </style>
+</head>
+<body>
 
+<nav class="top"><div class="wrap">
+  <a class="logo" href="#top">~/piyush</a>
+  <div class="links">
+    <a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </div>
+  <button class="kbd" id="openK" aria-label="Open command menu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="label">Search</span><kbd>⌘K</kbd></button>
+  <button class="iconbtn" id="theme" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+</div></nav>
 
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Piyush Kumar</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+<main class="wrap" id="top">
+  <header class="hero">
+    <div id="field" aria-label="Interactive particle field that morphs between cloud, speech AI and data shapes">
+      <span class="field-tag">// drag to spin · click to morph</span>
+      <div class="field-hud">
+        <div class="now">rendering <b id="shapeName">cloud.globe</b></div>
+        <div class="dots" id="dots"></div>
+      </div>
+    </div>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-				<div class="one-third js-fullheight order-md-last img" >
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Piyush Kumar</span></h1>
-
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-
-						<script>
-
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
-
-						// Create an array of typing text
-						const typingTexts = [
-						'Student ',
-						'Engineer  ',
-						];
-
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
-
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2>A Data Analyst</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <p><a href="https://github.com/impiyushkumar" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
-
-
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/about-me.jpeg" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Piyush Kumar</span></p>
-										<p><span class="title-s">AIML Student: </span> <span>Data Analyst</span></p>
-										<p><span class="title-s">Experience: </span> <span>Completed Google Data Analytics Professional Certificate By Coursera and Python with Data Science By Shreyans Coding School </span></p>
-										<p><span class="title-s">Address: </span> <span>Bhopal, India</span></p>
-									  </div>
-									</div>
-								  </div>
-
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>SQL</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>PYTHON</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Data Visualization</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Statistical Analysis</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Machine Learning</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>I’m Piyush Kumar, currently in my third year of pursuing a bachelor’s degree in Computer Science with a specialization on AI and Machine Learning. My academic journey has equipped me with a solid foundation in data analysis and statistical techniques. I’ve developed a strong proficiency in hypothesis testing and SQL, which allows me to efficiently handle and interpret complex data sets. My skills in Python further enhance my ability to create and refine machine learning models. I’m passionate about leveraging technology to drive innovative solutions and am excited about the opportunities in the field of artificial intelligence..</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Data Science &amp; Analytics</span></li>
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering in Computer Science</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
-									<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI </span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>Excel, Java, Python &amp; SQL</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Traveling, Photography</span></li>
-									
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="7">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/impiyushkumar/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </section>
-
-
-
-	
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Enthusiastic third-year Computer Science student specializing in AI and Machine Learning, with strong skills in data analysis, statistical techniques, and machine learning model development. Seeking opportunities to apply my expertise and drive innovation in the field of artificial intelligence..</p>
-          </div>
-        </div>
-
-		<div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2023-2024</span>
-						<h2>Python With Data Science</h2>
-						<p class="mt-4"> Completed a 10 months course of Python With Data Science at Shreyans Coding School
-							<ul>
-								<li>Phase 1: Python Programming
-
-									Completed a comprehensive Python programming course.
-									Developed a practical project to apply Python skills.</li>
-								<li>Phase 2: SQL
-
-									Gained expertise in SQL for database management and querying.
-									Worked on projects involving data manipulation.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						    <ul>
-                                <li>Phase 3: Data Science Libraries
-
-									Completed essential Python libraries: NumPy, Pandas, Matplotlib, and Seaborn.
-									Applied libraries for data analysis, visualization, and manipulation.</li>
-								<li>Phase 4: Statistical Analysis and Power BI
-
-									Learned statistical analysis techniques for data interpretation.
-									Gained proficiency in Power BI for advanced data visualization and reporting.</li>
-								<li>Phase 5: Machine Learning
-
-									Acquired foundational knowledge in machine learning concepts and algorithms.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2023-2024</span>
-						<h2>Google Data Analytics Professional Certificate</h2>
-						<p class="mt-4"> Completed Google Data Analytics Professional Certificate By Coursera
-							<ul>
-								<li>1. Foundations: Data, Data, Everywhere</li>
-								<li>2. Ask Questions to Make Data-Driven Decisions</li>
-								<li>3. Prepare Data for Exploration</li>
-								<li>4. Process Data from Dirty to Clean</li>
-								<li>5. Analyze Data to Answer Questions</li>
-								<li>6. Share Data Through the Art of Visualization</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-			</div>
-
-		<br>
-		<br>
-
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2022-2026</span>
-    					<h2>Bachelor of Engineering in  Computer Science</h2>
-    					<span class="position">Lakshmi Narain College of Technology University (LNCTU)</span>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2021-2022</span>
-    					<h2>Higher Secondary School</h2>
-    					<span class="position">DAV Public School</span>
-    					<p class="mt-4">Grade: First class distinction.</p>
-    				</div>
-				</div>
-    		</div>
-
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="./images/Piyush Resume.pdf" class="btn btn-primary py-4 px-5" target="_blank" rel="noopener noreferrer">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-   
-
-    <section class="ftco-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>Below are the sample Data Analytics projects on Python, Power BI & ML.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/impiyushkumar/Data-Analysis-Using-Car-Price-Data.git" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/impiyushkumar/Data-Analysis-Using-Car-Price-Data.git">Data Analysis Using Car Price Data</a></h3>
-                <p>This project aims to analyze car price data through a structured approach of data cleaning, preparation, and visualization.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/impiyushkumar/USA-Housing-Price-Prediction-Using-Python-And-ML.git" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/impiyushkumar/USA-Housing-Price-Prediction-Using-Python-And-ML.git">USA Housing Price Prediction Using Python And ML</a></h3>
-                <p>This project focuses on predicting housing prices in the USA based on various features using linear regression.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="https://github.com/impiyushkumar/Power-bi.git" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/impiyushkumar/Power-bi.git">Power BI HR Data dashboard Project</a></h3>
-                <p>This Power BI dashboard visualizes HR data to provide insights such as attrition rates, department performance, and other critical factors.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-	<br>
-
-
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-              </div>
-            </div>
-          </div>
+    <div class="id">
+      <canvas class="avatar" id="avatar" width="16" height="16" aria-label="Pixel avatar of Piyush"></canvas>
+      <div>
+        <h1>Piyush Kumar</h1>
+        <div class="role">Software Engineer · Cloud & AI · Data
+          <button class="copy" data-copy="piyushkumar5435@gmail.com" aria-label="Copy email">piyushkumar5435@gmail.com
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
         </div>
       </div>
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg); position: relative; z-index: 1;">
-		<div class="row justify-content-center">
-			<div class="col-md-7 ftco-animate text-center">
-				<h2>More projects on <span>GitHub</span></h2>
-				<div class="heading" style="z-index: 2; position: relative;">
-					<h4>I love to solve business problems & uncover hidden data stories</h4>
-					<br>
-					<p>
-						<a href="https://github.com/impiyushkumar" class="btn btn-primary py-3 px-5" style="z-index: 3; position: relative;">GitHub</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-				
-	</section>
+    </div>
 
+    <p class="lede">I ship products from code to cloud. I run the servers behind <em>englishjobsgermany.com</em>, built <em>jobmesh.in</em>, and make AI apps that listen, speak and read documents.</p>
 
+    <div class="status">
+      <span class="pill live"><span class="dot"></span>Open to full-time roles</span>
+      <span class="pill">Mumbai, India</span>
+      <span class="pill">B.Tech AI &amp; ML · 2026</span>
+    </div>
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
+    <div class="socials">
+      <a href="https://github.com/impiyushkumar" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a href="https://www.linkedin.com/in/impiyushkumar0/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
+      <a href="https://x.com/pydatawiz" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg></a>
+      <a href="https://leetcode.com/u/im_piyushk/" target="_blank" rel="noopener" aria-label="LeetCode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3 6 11.5a3.5 3.5 0 0 0 0 5L8.5 19a3.5 3.5 0 0 0 5 0L16 16.5"/><path d="M8 12h10"/></svg></a>
+      <a href="resume/Piyush_Kumar_Resume.pdf" target="_blank" rel="noopener" aria-label="Resume"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></a>
+    </div>
+
+    <div class="stats" id="stats">
+      <div><b data-n="790" data-s="+">0</b><span>users on platforms I run</span></div>
+      <div><b data-n="4000" data-s="+">0</b><span>jobs aggregated on JobMesh</span></div>
+      <div><b data-n="46" data-s="×">0</b><span>sign-up growth, zero ad spend</span></div>
+      <div><b data-n="1000" data-s="+">0</b><span>records validated for a US client</span></div>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="sec-head"><h2>Experience</h2><span class="mono">Dec 2025 → now</span></div>
+    <details class="job reveal" open>
+      <summary>
+        <div><div class="co"><a href="https://englishjobsgermany.com/" target="_blank" rel="noopener" style="text-decoration:none" onclick="event.stopPropagation()">EnglishJobsGermany ↗</a> <span class="pill live"><span class="dot"></span>Working</span></div><div class="title">Cloud &amp; AI Automation Engineer · Freelance <span class="chev">▶</span></div></div>
+        <div class="when">Apr 2026 – Present<br>Remote</div>
+      </summary>
+      <ul>
+        <li>Own production hosting for an AI-powered job board with <b>10,973 jobs</b> from <b>1,841 companies</b>: Linux servers, Nginx, PM2, DNS and deployments.</li>
+        <li>Led the platform's <b>migration from AWS to Google Cloud</b> while it stayed live.</li>
+        <li>Built a <b>Gemini + Docker</b> workflow that turns new listings into WhatsApp posts and publishes them in real time.</li>
+        <li>Drove a <b>46× rise in monthly sign-ups</b> (8 → 374) and <b>1,926 apply clicks</b> through SEO and LinkedIn, with zero ad spend.</li>
+      </ul>
+    </details>
+    <details class="job reveal">
+      <summary>
+        <div><div class="co">Fortune Cookie</div><div class="title">Data Annotator · Contract, for a US-based client <span class="chev">▶</span></div></div>
+        <div class="when">Sep 2026 – Nov 2026<br>Remote</div>
+      </summary>
+      <ul>
+        <li>Annotated and verified <b>1,000+ records</b> against the client's production backend.</li>
+        <li>Reconciled large Excel datasets using the backend as the source of truth, fixing field-level errors.</li>
+      </ul>
+    </details>
+    <details class="job reveal">
+      <summary>
+        <div><div class="co">Global BlueGrid IT Solutions</div><div class="title">Cloud Computing Intern <span class="chev">▶</span></div></div>
+        <div class="when">Dec 2025 – Mar 2026<br>Bhopal, India</div>
+      </summary>
+      <ul>
+        <li>Deployed a production Internal Management System on <b>GCP Compute Engine</b> for <b>40+ employees</b>, with MongoDB Atlas.</li>
+        <li>Configured Nginx and PM2, DNS routing for multiple apps, and hardened servers with firewall rules and IP allowlists.</li>
+      </ul>
+    </details>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><h2>Projects</h2><span class="mono">things I've shipped</span></div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="stage"><div class="feed" id="feed"></div></div>
+        <div class="body">
+          <h3>JobMesh <a href="https://jobmesh.in/" target="_blank" rel="noopener">jobmesh.in ↗</a></h3>
+          <p>Job aggregation for Indian tech: an automated scraping pipeline across ATS platforms, LLM auto-tagging, an admin dashboard and technical SEO.</p>
+          <div class="metric"><i>4,000+</i> listings · <i>200+</i> companies · <i>35%</i> returning users</div>
+          <div class="tags"><span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>LLMs</span><span>SEO</span></div>
         </div>
+      </article>
+      <article class="card reveal">
+        <div class="stage"><div class="wave" id="wave"></div><div class="wave-words">the <b>weather</b> is pleasant today</div></div>
+        <div class="body">
+          <h3>PronounceAI <a href="https://pronounceai-app.vercel.app/" target="_blank" rel="noopener">live ↗</a></h3>
+          <p>Speech-AI pronunciation coach: faster-Whisper STT and phoneme analysis score every word, then Gemini explains what to fix.</p>
+          <div class="metric">multi-signal scoring · <i>zero</i> audio stored</div>
+          <div class="tags"><span>FastAPI</span><span>Whisper</span><span>Gemini</span><span>Docker</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="stage"><div class="doc"><span style="width:70%"></span><span></span><span style="width:85%"></span><span style="width:60%"></span><span></span><span style="width:75%"></span><span style="width:50%"></span><div class="box" style="left:8%;top:22%;width:70%;height:22%"></div><div class="box" style="left:8%;top:58%;width:84%;height:26%;animation-delay:.6s"></div><div class="scan"></div></div></div>
+        <div class="body">
+          <h3>VedaAI <a href="https://vedaai-tool.vercel.app/" target="_blank" rel="noopener">live ↗</a></h3>
+          <p>Document AI that reads exam PDFs and handwritten answer sheets, maps each answer to its question and draws boxes around it.</p>
+          <div class="metric">vision LLM · bounding-box detection</div>
+          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Gemini Vision</span><span>pdf.js</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="stage"><div class="langs" id="langs"></div></div>
+        <div class="body">
+          <h3>Multilingual TTS <a href="https://github.com/impiyushkumar/infinia-tts-pipeline" target="_blank" rel="noopener">github ↗</a></h3>
+          <p>Voice-cloning text-to-speech in English, Hindi and Arabic, with an evaluation harness for speed, accuracy and voice match.</p>
+          <div class="metric">RTF <i>0.018</i> · WER <i>0%</i> EN · similarity <i>0.99</i></div>
+          <div class="tags"><span>Python</span><span>XTTS-v2</span><span>MMS-TTS</span><span>Whisper</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="stage"><div class="term">
+          <div class="ln" style="animation-delay:0s">$ docker compose up -d agent-07</div>
+          <div class="ln" style="animation-delay:.6s">› pulling image … <span class="ok">done</span></div>
+          <div class="ln" style="animation-delay:1.2s">› nginx reload … <span class="ok">ok</span></div>
+          <div class="ln" style="animation-delay:1.8s">› pm2 status … <span class="ok">online</span></div>
+          <div class="ln" style="animation-delay:2.4s">› https://proxyclaw.xyz <span class="ok">200</span></div>
+        </div></div>
+        <div class="body">
+          <h3>ProxyClaw <a href="https://proxyclaw.xyz/" target="_blank" rel="noopener">proxyclaw.xyz ↗</a></h3>
+          <p>Team SaaS for deploying Docker-based AI agents. I owned production deployment on AWS EC2 with Nginx and PM2.</p>
+          <div class="tags"><span>AWS EC2</span><span>Docker</span><span>Nginx</span><span>PM2</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="stage"><div class="split"><div class="bill">₹649 ÷ 4</div>
+          <div class="u" style="--a:0deg">AK</div><div class="u" style="--a:90deg">RS</div><div class="u" style="--a:180deg">PK</div><div class="u" style="--a:270deg">NV</div></div></div>
+        <div class="body">
+          <h3>StreamSplit <a href="https://www.streamsplit.shop/" target="_blank" rel="noopener">streamsplit.shop ↗</a></h3>
+          <p>A marketplace for splitting subscriptions: join a group, share the cost of Netflix or Spotify. Deployed on AWS EC2.</p>
+          <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>AWS</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Bhopal, India</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+91 7858968169</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">piyushkumar5435@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<a href="./images/Piyush Resume.pdf" class="rel="noopener noreferrer"  target="_blank"">
-				<div class="align-self-stretch box p-4 text-center">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="icon-globe"></span>
-					</div>
-					<h3 class="mb-4">Download Resume</h3>
-			  </div>
-			</a>
-          </div>
+  <section id="skills">
+    <div class="sec-head"><h2>Stack</h2><span class="mono">hover to pause</span></div>
+    <div class="marquee">
+      <div class="track" id="t1"></div>
+      <div class="track rev" id="t2"></div>
+    </div>
+    <div class="groups">
+      <div class="group reveal"><h4>cloud &amp; devops</h4><p>GCP, AWS EC2/S3, Linux, Docker, Nginx, PM2, DNS, CI/CD, firewall hardening</p></div>
+      <div class="group reveal"><h4>ai &amp; ml</h4><p>LLM integration (Gemini), speech AI (Whisper, XTTS-v2, MMS-TTS), vision LLMs, model evaluation (MOS, WER, RTF)</p></div>
+      <div class="group reveal"><h4>web</h4><p>TypeScript, React, Next.js, Node.js, Express, FastAPI, REST APIs, MongoDB, MySQL</p></div>
+      <div class="group reveal"><h4>data</h4><p>Python, SQL, Pandas, NumPy, ETL, data validation, Power BI, DAX, Excel, GA4</p></div>
+    </div>
+  </section>
 
-		  <div class="container">
-			<br>
-			<br>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://github.com/impiyushkumar"><span class="icon-github"></span></a></li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/impiyushkumar/"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://x.com/PyDataWizard"><span class="icon-twitter"></span></a></li>
-					  <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=100070759093242&mibextid=kFxxJD"><span class="icon-facebook"></span></a></li>
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
+  <section id="contact">
+    <div class="contact reveal">
+      <h2>Let's build something.</h2>
+      <p style="margin:0;color:var(--muted)">I'm looking for full-time roles in AI engineering, software engineering, cloud and data. The fastest way to reach me is email.</p>
+      <div class="btns">
+        <button class="btn primary" data-copy="piyushkumar5435@gmail.com">Copy email</button>
+        <a class="btn" href="resume/Piyush_Kumar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/impiyushkumar0/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <p class="mono" style="margin:0;color:var(--muted)">piyushkumar5435@gmail.com · +91 78589 68169 · <a href="resume/Piyush_Kumar_Resume_Data.pdf" target="_blank" rel="noopener">data-roles resume</a></p>
+    </div>
+  </section>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <footer><span>© 2026 Piyush Kumar</span><span class="mono">press ⌘K anywhere · click the little guy</span></footer>
+</main>
 
+<div class="ground"></div>
+<div id="walker" role="button" tabindex="0" aria-label="Pixel character, click to make him jump"><canvas id="sprite" width="12" height="16"></canvas></div>
+<div id="bubble"></div>
+<div class="toast" id="toast"></div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+<div id="cmdk" hidden><div class="panel" role="dialog" aria-label="Command menu">
+  <input id="kq" placeholder="Type a command or search…" autocomplete="off">
+  <ul id="kl"></ul>
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s), RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* theme */
+const root=document.documentElement;
+try{const t=localStorage.getItem('pk-theme'); if(t) root.dataset.theme=t;}catch(e){}
+$('#theme').onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme=dark?'light':'dark'; try{localStorage.setItem('pk-theme',root.dataset.theme)}catch(e){}; drawAvatar(); window.dispatchEvent(new Event('themechange'));};
+
+/* toast + copy */
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1600)};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;
+  navigator.clipboard?.writeText(b.dataset.copy).then(()=>toast('Email copied'),()=>toast(b.dataset.copy));});
+
+/* pixel art: original character */
+const PAL={K:'#14151a',H:'#1f2128',S:'#f1c9a5',s:'#d9a882',W:'#ffffff',E:'#14151a',D:'#2b2f3a',d:'#1c1f27',A:null,L:null,B:'#3b4252',R:'#e5484d'};
+const HEAD=[
+"..KKKKKKK...",
+".KKKKKKKKK..",
+"KKHKKKKHKKK.",
+"KKKSSSSSKKK.",
+"KKSSSSSSSKK.",
+".KSWESSWESK.",
+".KSSSSSSSK..",
+"..SSSsSSS...",
+"...SSSSS....",
+];
+const BODY_A=["..DDDDDDD...",".DDDdDdDDD..",".DDDDDDDDD..",".SDDDDDDDS..","..DDDDDDD...","..BB...BB...","..KK...KK..."];
+const BODY_B=["..DDDDDDD...",".DDDdDdDDD..",".DDDDDDDDD..",".SDDDDDDDS..","..DDDDDDD...","...BB.BB....","...KK.KK...."];
+const BODY_C=["..DDDDDDD...",".DDDdDdDDD..","SDDDDDDDDDS.","..DDDDDDD...","..DDDDDDD...","..BB...BB...","..KK...KK..."];
+function frame(body,blink,sleep){const head=HEAD.map(r=>r);if(blink||sleep){head[5]=".KSKKSSKKSK."}return head.concat(body);}
+function paint(ctx,rows,flip){const w=12,h=16;ctx.clearRect(0,0,w,h);
+  rows.forEach((r,y)=>[...r].forEach((c,x)=>{const col=PAL[c];if(!col)return;ctx.fillStyle=col;ctx.fillRect(flip?w-1-x:x,y,1,1);}));}
+function drawAvatar(){const c=$('#avatar'),x=c.getContext('2d');x.clearRect(0,0,16,16);
+  const rows=HEAD.concat(BODY_C.slice(0,5));rows.forEach((r,y)=>[...r].forEach((ch,i)=>{const col=PAL[ch];if(!col)return;x.fillStyle=col;x.fillRect(i+2,y+1,1,1)}));}
+drawAvatar();
+
+/* walker */
+const W=$('#walker'),SC=$('#sprite').getContext('2d'),B=$('#bubble');
+let wx=Math.min(innerWidth*0.15,140),dir=1,target=wx,state='walk',t0=performance.now(),idle=0,jumpV=0,jy=0,lastMove=performance.now(),said='';
+const LINES={top:"hi, I'm Piyush 👋",work:"currently keeping servers alive ☁️",projects:"psst, try the live demos",skills:"yes, I deploy on Fridays",contact:"say hi, I reply fast"};
+function say(m,ms=2600){if(!m)return;B.textContent=m;B.classList.add('show');clearTimeout(B._t);B._t=setTimeout(()=>B.classList.remove('show'),ms)}
+let mouseX=null;
+addEventListener('mousemove',e=>{mouseX=e.clientX;lastMove=performance.now();if(state==='sleep'){state='walk';say('oh! I’m up')}},{passive:true});
+addEventListener('scroll',()=>{lastMove=performance.now();if(state==='sleep')state='walk'},{passive:true});
+const jump=()=>{if(jy===0){jumpV=-6.5;say(['wheee','boing','again!','that tickles'][Math.random()*4|0],1200)}};
+W.addEventListener('click',jump);W.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();jump()}});
+const secs=['top','work','projects','skills','contact'].map(id=>document.getElementById(id));
+new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){const id=en.target.id;if(id!==said){said=id;say(LINES[id])}}}),{threshold:.35}).observe&&secs.forEach(s=>s&&new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting&&s.id!==said){said=s.id;say(LINES[s.id])}}),{threshold:.3}).observe(s));
+function tick(now){
+  const dt=Math.min(32,now-t0);t0=now;
+  if(now-lastMove>14000&&state!=='sleep'){state='sleep';say('zzz…',3000)}
+  if(state!=='sleep'){
+    if(mouseX!==null&&Math.abs(mouseX-wx)<240&&now-lastMove<1500){target=mouseX-24+(mouseX>wx?-40:40)}
+    else if(Math.abs(target-wx)<4){idle+=dt;if(idle>1800){idle=0;target=40+Math.random()*(innerWidth-130)}}
+    const dx=target-wx; if(Math.abs(dx)>3&&!RM){dir=Math.sign(dx);wx+=dir*Math.min(Math.abs(dx),dt*0.07)}
+  }
+  if(jumpV||jy){jy+=jumpV;jumpV+=0.45;if(jy>0){jy=0;jumpV=0}}
+  wx=Math.max(4,Math.min(innerWidth-52,wx));
+  W.style.transform=`translate(${wx}px,${jy*3}px)`;
+  B.style.left=Math.max(8,Math.min(innerWidth-230,wx-6))+'px';
+  const moving=Math.abs(target-wx)>3&&state!=='sleep';
+  const step=Math.floor(now/180)%2, blink=Math.floor(now/2600)%2===0&&(now%2600)<140;
+  paint(SC,frame(state==='sleep'?BODY_C:(moving?(step?BODY_A:BODY_B):BODY_C),blink,state==='sleep'),dir<0);
+  if(state==='sleep'){SC.fillStyle=css('--accent')||'#2f5bff';SC.fillRect(10,1+((now/400|0)%2),1,1)}
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+/* project stages */
+const jobs=["SDE I · Razorpay","Cloud Eng · Zoho","AI Eng · Sarvam","Data Analyst · Swiggy","Backend · Postman","DevOps · BrowserStack","ML Intern · Freshworks","SRE · CRED"];
+$('#feed').innerHTML=[...jobs,...jobs].map((j,i)=>`<div>${j}<u>${['ai','cloud','data','backend'][i%4]}</u></div>`).join('');
+$('#wave').innerHTML=Array.from({length:42},(_,i)=>`<i style="--h:${20+Math.abs(Math.sin(i*.55))*70}%;animation-delay:${(i%14)*-.09}s"></i>`).join('');
+$('#langs').innerHTML=['EN','HI','AR'].map((l,k)=>`<div><em>${l}</em><div class="spec">${Array.from({length:30},(_,i)=>`<i style="--h:${25+Math.abs(Math.sin(i*.7+k))*70}%;animation-delay:${(i%10)*-.12-k*.3}s"></i>`).join('')}</div></div>`).join('');
+
+/* skills marquee */
+const sk1=[['cloud','GCP'],['cloud','AWS'],['ops','Docker'],['ops','Nginx'],['ops','PM2'],['os','Linux'],['ai','Gemini'],['ai','Whisper'],['ai','XTTS-v2'],['ai','Prompt Eng'],['ops','CI/CD']];
+const sk2=[['lang','TypeScript'],['lang','Python'],['web','Next.js'],['web','React'],['api','FastAPI'],['api','Node.js'],['db','MongoDB'],['db','MySQL'],['data','Pandas'],['data','Power BI'],['lang','SQL']];
+const fill=(el,a)=>el.innerHTML=[...a,...a].map(([t,n])=>`<span class="chip"><small>${t}</small>${n}</span>`).join('');
+fill($('#t1'),sk1);fill($('#t2'),sk2);
+
+/* count up */
+const cnt=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;cnt.disconnect();
+  document.querySelectorAll('#stats b').forEach(b=>{const n=+b.dataset.n,s=b.dataset.s;if(RM){b.textContent=n.toLocaleString('en-IN')+s;return}
+    const st=performance.now();const f=t=>{const p=Math.min(1,(t-st)/1400),e=1-Math.pow(1-p,3);b.textContent=Math.round(n*e).toLocaleString('en-IN')+s;if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}),{threshold:.3});
+cnt.observe($('#stats'));
+document.querySelectorAll('#stats b').forEach(b=>b.textContent=(+b.dataset.n).toLocaleString('en-IN')+b.dataset.s);
+
+/* reveal (visible at rest; animates only after JS runs) */
+if(!RM){const rv=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.remove('pre');rv.unobserve(en.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>{const r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add('pre');rv.observe(el)}});}
+
+/* command palette */
+const K=$('#cmdk'),KQ=$('#kq'),KL=$('#kl');
+const go=id=>()=>document.getElementById(id).scrollIntoView({behavior:RM?'auto':'smooth'});
+const open=u=>()=>{const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';a.click()};
+const CMDS=[['Experience','section',go('work')],['Projects','section',go('projects')],['Stack','section',go('skills')],['Contact','section',go('contact')],
+ ['Copy email','action',()=>{navigator.clipboard?.writeText('piyushkumar5435@gmail.com').then(()=>toast('Email copied'),()=>toast('piyushkumar5435@gmail.com'))}],
+ ['Toggle theme','action',()=>$('#theme').click()],['Make him jump','action',jump],
+ ['Open JobMesh','link',open('https://jobmesh.in/')],['Open PronounceAI','link',open('https://pronounceai-app.vercel.app/')],['Open VedaAI','link',open('https://vedaai-tool.vercel.app/')],
+ ['GitHub','link',open('https://github.com/impiyushkumar')],['LinkedIn','link',open('https://www.linkedin.com/in/impiyushkumar0/')],['Resume','link',open('resume/Piyush_Kumar_Resume.pdf')],['Open EnglishJobsGermany','link',open('https://englishjobsgermany.com/')],['X (Twitter)','link',open('https://x.com/pydatawiz')]];
+let sel=0,list=CMDS;
+const render=()=>{const q=KQ.value.toLowerCase();list=CMDS.filter(c=>c[0].toLowerCase().includes(q));sel=Math.min(sel,Math.max(0,list.length-1));
+  KL.innerHTML=list.map((c,i)=>`<li class="${i===sel?'on':''}" data-i="${i}">${c[0]}<span>${c[1]}</span></li>`).join('')||'<li>No matches</li>'};
+const openK=()=>{K.hidden=false;KQ.value='';sel=0;render();KQ.focus()},closeK=()=>{K.hidden=true};
+$('#openK').onclick=openK;
+addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();K.hidden?openK():closeK()}
+  if(K.hidden)return; if(e.key==='Escape')closeK();
+  if(e.key==='ArrowDown'){sel=(sel+1)%list.length;render();e.preventDefault()} if(e.key==='ArrowUp'){sel=(sel-1+list.length)%list.length;render();e.preventDefault()}
+  if(e.key==='Enter'&&list[sel]){closeK();list[sel][2]()}});
+KQ.oninput=()=>{sel=0;render()};
+KL.onclick=e=>{const li=e.target.closest('li[data-i]');if(li){closeK();list[+li.dataset.i][2]()}};
+K.onclick=e=>{if(e.target===K)closeK()};
+
+/* three.js particle field */
+const host=$('#field');
+if(!window.THREE){host.insertAdjacentHTML('beforeend','<p style="position:absolute;inset:auto 16px 40px;color:var(--muted)">cloud · speech AI · data</p>');return;}
+const N=2600,renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(2,devicePixelRatio));host.prepend(renderer.domElement);
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,1,.1,100);cam.position.z=7.5;
+const shapes={}, names=['cloud.globe','speech.wave','data.grid','ai.network'];
+const mk=f=>{const a=new Float32Array(N*3);for(let i=0;i<N;i++){const p=f(i);a[i*3]=p[0];a[i*3+1]=p[1];a[i*3+2]=p[2]}return a};
+shapes[0]=mk(i=>{const phi=Math.acos(1-2*(i+.5)/N),th=Math.PI*(1+Math.sqrt(5))*i,r=2.1;return[r*Math.sin(phi)*Math.cos(th),r*Math.sin(phi)*Math.sin(th),r*Math.cos(phi)]});
+shapes[1]=mk(i=>{const cols=130,x=(i%cols)/cols*7-3.5,row=Math.floor(i/cols),z=(row/20)*2-1;const amp=Math.exp(-x*x/3)*1.3;return[x,Math.sin(x*3+row*.35)*amp*(.5+.5*Math.cos(row*.4)),z]});
+shapes[2]=mk(i=>{const s=Math.cbrt(N)|0,x=i%s,y=Math.floor(i/s)%s,z=Math.floor(i/(s*s));const k=3/s;return[(x-s/2)*k,(y-s/2)*k,(z-s/2)*k]});
+shapes[3]=mk(i=>{const hubs=7,h=i%hubs,ang=h/hubs*Math.PI*2,c=[Math.cos(ang)*1.9,Math.sin(ang)*1.2,Math.sin(ang*2)*.6];
+  if(i<N*.55){const r=.35*Math.cbrt(Math.random());const u=Math.random()*Math.PI*2,v=Math.acos(2*Math.random()-1);return[c[0]+r*Math.sin(v)*Math.cos(u),c[1]+r*Math.sin(v)*Math.sin(u),c[2]+r*Math.cos(v)]}
+  const h2=(h+1+(i%3))%hubs,a2=h2/hubs*Math.PI*2,c2=[Math.cos(a2)*1.9,Math.sin(a2)*1.2,Math.sin(a2*2)*.6],t=Math.random();return[c[0]+(c2[0]-c[0])*t,c[1]+(c2[1]-c[1])*t,c[2]+(c2[2]-c[2])*t]});
+const geo=new THREE.BufferGeometry(),pos=new Float32Array(shapes[0]);geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+const mat=new THREE.PointsMaterial({size:.035,color:new THREE.Color(css('--accent')),transparent:true,opacity:.9,depthWrite:false});
+const pts=new THREE.Points(geo,mat);scene.add(pts);
+addEventListener('themechange',()=>mat.color.set(css('--accent')));
+matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>mat.color.set(css('--accent')));
+let cur=0,from=shapes[0],to=shapes[0],mt=1,auto=performance.now();
+const dots=$('#dots');dots.innerHTML=names.map((n,i)=>`<button aria-label="Show ${n}" data-k="${i}" class="${i?'':'on'}"></button>`).join('');
+const morph=k=>{if(k===cur&&mt>=1)return;from=new Float32Array(pos);to=shapes[k];cur=k;mt=0;auto=performance.now();$('#shapeName').textContent=names[k];
+  dots.querySelectorAll('button').forEach((b,i)=>b.classList.toggle('on',i===k))};
+dots.onclick=e=>{const b=e.target.closest('button');if(b){e.stopPropagation();morph(+b.dataset.k)}};
+let rx=.3,ry=0,vx=0,vy=.0025,drag=null,moved=0,mx=0,my=0;
+host.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];moved=0;host.setPointerCapture(e.pointerId)});
+host.addEventListener('pointermove',e=>{const r=host.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;
+  if(drag){const dx=e.clientX-drag[0],dy=e.clientY-drag[1];moved+=Math.abs(dx)+Math.abs(dy);vy=dx*.0004;vx=dy*.0004;ry+=dx*.008;rx+=dy*.008;drag=[e.clientX,e.clientY]}});
+host.addEventListener('pointerup',()=>{if(drag&&moved<6)morph((cur+1)%names.length);drag=null});
+const size=()=>{const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.position.z=w<500?9:7.5;cam.updateProjectionMatrix()};
+size();addEventListener('resize',size);
+let visible=true;new IntersectionObserver(es=>visible=es[0].isIntersecting).observe(host);
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+function loop(now){requestAnimationFrame(loop);if(!visible)return;
+  if(!RM&&now-auto>6000)morph((cur+1)%names.length);
+  if(mt<1){mt=Math.min(1,mt+.018);const e=ease(mt);for(let i=0;i<N*3;i++)pos[i]=from[i]+(to[i]-from[i])*e;
+    const j=Math.sin(mt*Math.PI)*.25;for(let i=0;i<N*3;i+=3){pos[i]+=Math.sin(i+now*.002)*j*.1}geo.attributes.position.needsUpdate=true}
+  if(!drag&&!RM){ry+=vy;rx+=vx;vx*=.96;vy+=(0.0025-vy)*.02}
+  pts.rotation.y=ry+mx*.4;pts.rotation.x=rx*.3+my*.3;
+  renderer.render(scene,cam)}
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
 </html>
